@@ -1,0 +1,2 @@
+class Myjson < ApplicationRecord
+end
