@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20171022074946) do
 
-  create_table "myjsons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "myjsons", force: :cascade do |t|
     t.string "form"
     t.string "form_name"
     t.integer "order_id"
-    t.float "price", limit: 24
+    t.float "price"
     t.string "product1"
     t.string "product2"
     t.string "name"

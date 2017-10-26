@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :jsons
   get '/msg' => 'send_messages#send_message'
-
+  get '/gmsg' => 'send_messages#send_group_message'
 
 
 end

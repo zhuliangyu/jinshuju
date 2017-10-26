@@ -1,5 +1,31 @@
-<table>
-  <tr>
+<table class="table table-bordered">
+  <%=link_to "Uhill提货点" ,
+             :controller => :send_messages,
+             :action => :send_group_message,
+             :group_hash => {message:"Uhill Save-on-Food停车场", key: "Uhill"}
+
+  %> ||
+  <%=link_to "UBC第一个提货点:2136 west mall" ,
+             :controller => :send_messages,
+             :action => :send_group_message,
+             :group_hash => {message:"UBC第一个提货点:2136 west mall", key: "2136"}
+
+  %> ||
+  <%=link_to "UBC第二个提货点: Forestry停车场" ,
+             :controller => :send_messages,
+             :action => :send_group_message,
+             :group_hash => {message:"UBC第二个提货点: Forestry停车场", key: "Forestry"}
+
+  %> ||
+  <%=link_to "UBC第三个提货点: Bookstores停车场" ,
+             :controller => :send_messages,
+             :action => :send_group_message,
+             :group_hash => {message:"UBC第三个提货点: Bookstores停车场", key: "Bookstores"}
+
+  %> ||
+
+
+  <thead class="thead-dark">
     <th>id</th>
     <th>form</th>
     <th>form_name</th>
@@ -13,7 +39,7 @@
     <th>comment</th>
     <th>address</th>
 
-  </tr>
+  </thead>
 
   <% @orders.each do |order| %>
 
@@ -27,13 +53,13 @@
         <td><%= order.product2 %></td>
         <td><%= order.name %></td>
         <td><%= order.phone %></td>
-        <td><%#= order.comment %></td>
+        <td><%= order.comment %></td>
         <td><%= order.address %></td>
-        <td><%= link_to "MSG",
+        <td><%#= link_to "MSG",
                         :controller => :send_messages,
                         :action => :send_message,
                         :number => order.phone,
-                        :message => "您好" + order.name + ", 您的餐到了" + order.address + ", 总共金额" + order.price.to_s + ", 请您尽快来取. 此短信为系统发送,请勿回复."
+                        :message => "您好" + order.name + ", 您的餐到了" + order.address + ", 总共金额" + order.price.to_s + ", 请您尽快来取. 此次送货员联系电话: 7783007960"
         %>
         </td>
 

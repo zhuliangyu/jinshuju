@@ -95,6 +95,7 @@ class JsonsController < ApplicationController
 
   end
 
+
   private def send_message(number_arr, my_message)
     # put your own credentials here
     account_sid =  ENV["twilio_account_sid"]
